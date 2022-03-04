@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Kategori Düzenle";
+}
+<form action="/Categories/Edit" method="post">
+    <div class="mb-3">
+        <label class="form-label">Kategori Adı</label>
+        <input type="text" name="e_kategori_adi" class="form-control" value="@ViewBag.category.e_kategori_adi">
+    </div>
+    <input type="hidden" name="ESKI_ID" value="@ViewBag.category.e_id" />
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>

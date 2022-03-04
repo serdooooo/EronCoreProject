@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Kategoriler";
+}
+<a href="/Categories/Add" class="btn btn-success">Ekle</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Adı</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CategoryListResponseModel category in ViewBag.categories)
+        {
+            <tr>
+                <td>@category.e_id</td>
+                <td>@category.e_kategori_adi</td>
+                <td>
+                    <a href="/Categories/Update/@category.e_id" class="btn btn-warning">Güncelle</a>
+                    <a href="/Categories/Delete/@category.e_id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
