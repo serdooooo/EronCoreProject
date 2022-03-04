@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Kişiler";
+}
+<a href="/Users/Add" class="btn btn-success">Ekle</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kategori Adı</th>
+            <th>Ad Soyad</th>
+            <th>Telefon</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (UserListResponseModel user in ViewBag.users)
+        {
+        <tr>
+            <td>@user.e_id</td>
+            <td>@user.e_kategori_adi</td>
+            <td>@user.e_adi_soyadi</td>
+            <td>@user.e_telefon</td>
+            <td>
+                <a href="/Users/Update/@user.e_id" class="btn btn-warning">Güncelle</a>
+                <a href="/Users/Delete/@user.e_id" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

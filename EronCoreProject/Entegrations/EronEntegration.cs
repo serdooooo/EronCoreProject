@@ -114,5 +114,56 @@ namespace EronCoreProject.Entegrations
                 return new List<CategoryResponseModel>();
             return JsonConvert.DeserializeObject<List<CategoryResponseModel>>(response);
         }
+
+
+
+
+
+        ///////////////////kişi/////////////////////
+        public List<UserListResponseModel> GetAllUsers(UserAddModel users)
+        {
+            var headers = new List<KeyValuePair<string, string>>();
+            headers.Add(new KeyValuePair<string, string>("islem", "KISI_LISTESI"));
+            headers.Add(new KeyValuePair<string, string>("ptoken", "OPp60lBs9vqqNiAvzM2QPsgVuzHvld4ZShVGqlYqEcEgi2BGFt"));
+            headers.Add(new KeyValuePair<string, string>("utoken", AppData.LoginUser.UTOKEN));
+            string response = this.GetRequest("kisi", users, headers);
+            if (response == "" || response == null)
+                return new List<UserListResponseModel>();
+            return JsonConvert.DeserializeObject<List<UserListResponseModel>>(response);
+        }
+
+        public List<UserResponseModel> UserAdd(UserAddModel modeladd)
+        {
+            var headers = new List<KeyValuePair<string, string>>();
+            headers.Add(new KeyValuePair<string, string>("islem", "KISI_LISTESI_EKLE"));
+            headers.Add(new KeyValuePair<string, string>("ptoken", "OPp60lBs9vqqNiAvzM2QPsgVuzHvld4ZShVGqlYqEcEgi2BGFt"));
+            headers.Add(new KeyValuePair<string, string>("utoken", AppData.LoginUser.UTOKEN));
+            string response = this.GetRequest("kisi", modeladd, headers);
+            if (response == "" || response == null)
+                return new List<UserResponseModel>();
+            return JsonConvert.DeserializeObject<List<UserResponseModel>>(response);
+        }
+        public List<UserResponseModel> UserDelete(UserDeleteModel model)
+        {
+            var headers = new List<KeyValuePair<string, string>>();
+            headers.Add(new KeyValuePair<string, string>("islem", "KISI_LISTESI_SIL"));
+            headers.Add(new KeyValuePair<string, string>("ptoken", "OPp60lBs9vqqNiAvzM2QPsgVuzHvld4ZShVGqlYqEcEgi2BGFt"));
+            headers.Add(new KeyValuePair<string, string>("utoken", AppData.LoginUser.UTOKEN));
+            string response = this.GetRequest("kisi", model, headers);
+            if (response == "" || response == null)
+                return new List<UserResponseModel>();
+            return JsonConvert.DeserializeObject<List<UserResponseModel>>(response);
+        }
+        public List<UserResponseModel> UserUpdate(UserUpdateModel model)
+        {
+            var headers = new List<KeyValuePair<string, string>>();
+            headers.Add(new KeyValuePair<string, string>("islem", "KISI_LISTESI_DUZENLE"));
+            headers.Add(new KeyValuePair<string, string>("ptoken", "OPp60lBs9vqqNiAvzM2QPsgVuzHvld4ZShVGqlYqEcEgi2BGFt"));
+            headers.Add(new KeyValuePair<string, string>("utoken", AppData.LoginUser.UTOKEN));
+            string response = this.GetRequest("kisi", model, headers);
+            if (response == "" || response == null)
+                return new List<UserResponseModel>();
+            return JsonConvert.DeserializeObject<List<UserResponseModel>>(response);
+        }
     }
 }

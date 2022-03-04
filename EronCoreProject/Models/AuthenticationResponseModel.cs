@@ -24,4 +24,7 @@ namespace EronCoreProject.Models
     public class CategoryResponseModel : ResponseModel
     {
     }
+    public class UserResponseModel : ResponseModel
+    {
+    }
 }
