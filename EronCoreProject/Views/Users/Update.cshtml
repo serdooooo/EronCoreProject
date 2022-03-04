@@ -1,14 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Kişi Düzenle";
 }
+
+<h4>48	Aile</h4>
+<h4>159	İş</h4>
+<h4>160	Okul</h4>
 <form action="/Users/Edit" method="post">
     <div class="mb-3">
         <label class="form-label">Adı Soyadı</label>
         <input type="text" name="e_adi_soyadi" class="form-control" value="@ViewBag.user.e_adi_soyadi">
+
         <label class="form-label">Telefon</label>
         <input type="text" name="e_telefon" class="form-control" value="@ViewBag.user.e_telefon">
+
+        <label class="form-label">Kategori Id</label>
+        <input type="text" name="e_kategori_id" class="form-control" value="@ViewBag.user.e_kategori_id">
     </div>
     <input type="hidden" name="ESKI_ID" value="@ViewBag.user.e_id" />
-    @*<input type="hidden" name="e_kategori_id" value="@ViewBag.user.e_kategori_id" />*@
     <button type="submit" class="btn btn-primary">Ekle</button>
 </form>
